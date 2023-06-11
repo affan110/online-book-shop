@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword"
+        content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,Angular 2,Angular4,Angular 4,jQuery,CSS,HTML,RWD,Dashboard,React,React.js,Vue,Vue.js">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>ACR Book Shop</title>
+
+    <link href="/stylesheets/admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+    <header class="app-header navbar">
+
+        <a class="navbar-brand" href="/admin/dashbord/">
+            <strong>ACR Book Shop</strong>
+        </a>
+        <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    </header>
+
+    <div class="app-body">
+        <div class="sidebar bg-color-2">
+            <nav class="sidebar-nav">
+                <ul class="nav font-weight-bold">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/dashbord/">
+                            <i class="fa fa-dashboard"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/admin/dashbord/category">
+                            <i class="fa fa-tags"></i> Category
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/dashbord/subcategory">
+                            <i class="fa fa-tags"></i> Subcategory
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="/admin/dashbord/products">
+                            <i class="fa fa-book"></i>Books
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/dashbord/orders">
+                            <i class="fa fa-shopping-cart"></i>Orders
+                        </a>
+                    </li>
+
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="/admin/dashbord/logout">
+                            <i class="fa fa-sign-out"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+        </div>
+
+        <!-- Main content -->
+        <main class="main">
+            {{{body}}}
+        </main>
+
+    </div>
+
+    <footer class="app-footer">
+        <span>
+            <a href="#">ACR Book Shop</a> ©
+            <script>
+                var d = new Date();
+                document.write(d.getFullYear());
+            </script>
+            creativeLabs.
+        </span>
+        <span class="ml-auto">Powered by
+            <a href="#">ACR Book Shop</a>
+        </span>
+    </footer>
+    <script src="/javascripts/admin.js"></script>
+
+</body>
+
+</html>

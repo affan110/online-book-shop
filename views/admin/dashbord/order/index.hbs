@@ -1,0 +1,70 @@
+<div class="container-fluid mt-3">
+    <div class="card">
+        <div class="card-header">
+            <h3>Orders</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped table-sm table-bordered table-responsive-sm text-center table-hover">
+                <thead>
+                    <tr>
+                        <th>OrderID</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>PaymentId</th>
+                        <th>Total Price</th>
+                        <th>Delivered</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{# each products }} {{# each this}}
+                    <tr>
+                        <td>{{this.id}}</td>
+                        <td>{{this.name}}</td>
+                        <td>{{this.address}}</td>
+                        <td>{{this.paymentId}}</td>
+                        <td>{{this.cart.totalPrice}}</td>
+                        <td>{{this.accpeted}}</td>
+                        <td>
+                            <a href="/admin/dashbord/order/{{this.id}}/edit" class="btn btn-info" title="Order Deliver">
+                                <i class="fa fa-check"></i>
+                            </a>
+                            
+                            <a href="/admin/dashbord/order/{{this.id}}/delete">
+                            <button title="Delete" data-toggle="modal" value={{this.id}} class="btn btn-danger"
+                                data-target="#myModal">
+                                <i class="fa fa-trash-o" aria-hidden="true"> </i>
+                            </button>
+                            </a>
+                        </td>
+
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Confirm Delete</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-header">
+                                        Are you sure you want to delete the entry?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="" class="btn btn-danger yes">yes</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </tr>
+                    {{/each}} {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script src="/js/jquery.js"></script>
+<script src="/jquery/order.js"></script>

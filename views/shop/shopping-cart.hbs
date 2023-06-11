@@ -1,0 +1,62 @@
+<style>
+  input {
+    border: black 2px solid;
+    width: 35px;
+    height: 25px;
+    text-align: center;
+  }
+
+  img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .description {
+    position: relative;
+    left: 70px;
+    bottom: 50px;
+  }
+
+  .product-item {
+    margin-bottom: 15px;
+  }
+</style>
+{{# if products}}
+<div class="row">
+  <div class="col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="" style="text-transform: uppercase">Total: <span style="color: #f57224"> Rs. {{totalPrice}}</span>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{# each products}}
+        <div class="product-item">
+          <img src="/uploads/{{this.item.image}}" alt="Product">
+          <span>
+            {{!-- This ititle --}}
+            <b>{{this.item.title}}</b>
+          </span>
+          <div class="btn-group">
+            <a class="btn btn-info" href="/reduce/{{this.item._id}}">-</a>
+            <span class="btn btn-info">{{this.qty}}</span>
+            <a class="btn btn-info" href="/add-to-cart/{{this.item._id}}">+</a>
+          </div>
+          <strong>Rs. {{this.price}}</strong>
+          <a class="btn btn-danger pull-right btn-sm" href="/remove/{{this.item._id}}">X</a>
+          <hr>
+        </div>
+        {{/each}}
+      </div>
+      <div class="panel-footer">
+        <a href="/checkout" type="button" class="btn btn-success">Checkout</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{else}}
+<div class="text-center">
+  <h2>No items in cart</h2>
+</div>
+{{/if}}

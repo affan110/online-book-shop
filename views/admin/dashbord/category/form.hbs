@@ -1,0 +1,35 @@
+<div class="app flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 style="text-align: center">Category</h2>
+                <div class="card mx-4" style="background: darkkhaki;">
+                    <div class="card-body p-4">
+                        {{#if category.id}}
+                        <form method="post" action="/admin/dashbord/category/{{category.id}}">
+                            {{else}}
+                            <form method="post" action="/admin/dashbord/category">
+                                {{/if}}
+                                <div class="form-group">
+                                    <label for="source">Title</label>
+                                    <input type="text" name="title" class="form-control" id="source" value="{{category.title}}" placeholder="Enter Title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="source">Title in English</label>
+                                    <input type="text" name="titleen" class="form-control" id="source" value="{{category.titleen}}" placeholder="Enter Author Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="target">Description</label>
+                                    <input type="text" name="desc" value="{{category.description}}" class="form-control" id="target" aria-describedby="emailHelp"
+                                        placeholder="Enter description">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
